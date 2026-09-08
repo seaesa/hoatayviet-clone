@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,440;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/site/logo.jpg">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -28,15 +29,7 @@
 <header class="site-header">
   <div class="container header-main">
     <a class="brand" href="index.html">
-      <span class="brand-mark" style="color:var(--teak)">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 27h28l-3 6H9l-3-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M20 27V8" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M20 10c5 1 8 4 9 8h-9v-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M20 13c-3.5 1-6 3.5-7 6h7v-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span class="brand-name">Hoa Tay Việt<small>MODEL SHIP WORKSHOP</small></span>
+      <img class="brand-logo" src="assets/img/site/logo.jpg" alt="Hoa Tay Việt">
     </a>
     <nav class="main-nav">
       <a href="index.html" data-nav-link data-i18n="nav.home">Trang chủ</a>
@@ -62,6 +55,7 @@
           <button type="submit" data-i18n-aria="search.label" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="m19.5 19.5-4.2-4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
         </form>
       </div>
+      <button class="cart-toggle" type="button" data-cart-toggle data-i18n-aria="nav.cart" aria-label="Giỏ hàng"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg><span class="cart-badge" data-cart-badge data-empty="true">0</span></button>
       <a class="btn btn-primary btn-sm" href="contact.html" data-i18n="nav.cta">Yêu cầu báo giá</a>
       <button class="menu-toggle" data-menu-toggle aria-label="Mở menu" type="button"><span></span></button>
     </div>
@@ -76,6 +70,10 @@
       <button type="submit" data-i18n-aria="search.label" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="m19.5 19.5-4.2-4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
     </form>
   </div>
+  <button class="mobile-cart-link" type="button" data-cart-toggle>
+    <span data-i18n="nav.cart">Giỏ hàng</span>
+    <span class="cart-badge" data-cart-badge data-empty="true">0</span>
+  </button>
   <a href="index.html" data-i18n="nav.home">Trang chủ</a>
   <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
   <a href="catalog.html" data-i18n="nav.catalog">Sản phẩm</a>
@@ -146,6 +144,7 @@
 <script src="assets/js/icons.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/cart.js"></script>
 <script src="assets/js/main.js"></script>
 <a class="floating-call" href="tel:+84908062685" aria-label="Gọi 0908 062 685">
   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 3h3l2 5-2.5 2A11 11 0 0 0 14 15.5l2-2.5 5 2v3a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z"/></svg>

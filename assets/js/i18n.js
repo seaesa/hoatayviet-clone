@@ -14,6 +14,16 @@ const I18N = {
   "nav.guide.order": { vi: "Hướng dẫn mua hàng", en: "How to Order" },
   "search.placeholder": { vi: "Tìm kiếm sản phẩm...", en: "Search products..." },
   "search.label": { vi: "Tìm kiếm", en: "Search" },
+  "nav.cart": { vi: "Giỏ hàng", en: "Cart" },
+
+  "cart.title": { vi: "Giỏ hàng", en: "Your cart" },
+  "cart.empty": { vi: "Giỏ hàng của bạn đang trống.", en: "Your cart is empty." },
+  "cart.subtotal": { vi: "Tổng cộng", en: "Subtotal" },
+  "cart.checkout": { vi: "Yêu cầu báo giá giỏ hàng", en: "Request a quote for cart" },
+  "cart.clear": { vi: "Xóa giỏ hàng", en: "Clear cart" },
+  "cart.addToCart": { vi: "Thêm vào giỏ", en: "Add to cart" },
+  "cart.added": { vi: "Đã thêm ✓", en: "Added ✓" },
+  "cart.summaryTitle": { vi: "Giỏ hàng của bạn", en: "Your cart" },
 
   "hero.eyebrow": { vi: "Xưởng chế tác từ 2009", en: "Handcrafting since 2009" },
   "hero.title.1": { vi: "Mô hình tàu gỗ,", en: "Wooden ships," },

@@ -149,7 +149,15 @@ function ensureModal() {
         <span class="modal-price" data-modal-price></span>
         <span class="modal-price-vnd" data-modal-price-vnd></span>
         <p class="form-note" data-modal-note></p>
-        <a class="btn btn-primary" data-modal-cta href="#"></a>
+        <div class="cart-qty" data-modal-qty>
+          <button type="button" data-qty-down aria-label="-">${ICONS.minus}</button>
+          <span data-qty-value>1</span>
+          <button type="button" data-qty-up aria-label="+">${ICONS.plus}</button>
+        </div>
+        <div class="modal-cta-row">
+          <button class="btn btn-primary" type="button" data-modal-add-cart></button>
+          <a class="btn btn-outline" data-modal-cta href="#"></a>
+        </div>
       </div>
     </div>
   </div>`;
@@ -157,7 +165,46 @@ function ensureModal() {
   backdrop.addEventListener("click", (e) => { if (e.target === backdrop) closeModal(); });
   backdrop.querySelector("[data-modal-close]").addEventListener("click", closeModal);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+  let qty = 1;
+  const qtyValue = backdrop.querySelector("[data-qty-value]");
+  backdrop.querySelector("[data-qty-down]").addEventListener("click", () => {
+    qty = Math.max(1, qty - 1);
+    qtyValue.textContent = qty;
+  });
+  backdrop.querySelector("[data-qty-up]").addEventListener("click", () => {
+    qty = qty + 1;
+    qtyValue.textContent = qty;
+  });
+  backdrop.querySelector("[data-modal-add-cart]").addEventListener("click", () => {
+    const slug = backdrop.getAttribute("data-current-slug");
+    if (!slug) return;
+    addToCart(slug, qty);
+    flashAdded(backdrop.querySelector("[data-modal-add-cart]"));
+    qty = 1;
+    qtyValue.textContent = qty;
+  });
   return backdrop;
+}
+
+function flashAdded(btn) {
+  btn.classList.add("added");
+  if (btn.classList.contains("quick-add")) {
+    // Icon-only button: swap the icon itself, don't touch layout with text.
+    const original = btn.innerHTML;
+    btn.innerHTML = ICONS.check;
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.classList.remove("added");
+    }, 900);
+  } else {
+    const original = btn.textContent;
+    btn.textContent = t("cart.added", getLang());
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.classList.remove("added");
+    }, 1200);
+  }
 }
 
 function closeModal() {
@@ -195,6 +242,10 @@ function openProductModal(slug) {
   cta.textContent = t("catalog.quote", lang);
   cta.href = `contact.html?product=${encodeURIComponent(p.name)}`;
 
+  backdrop.setAttribute("data-current-slug", p.slug);
+  backdrop.querySelector("[data-qty-value]").textContent = "1";
+  backdrop.querySelector("[data-modal-add-cart]").textContent = t("cart.addToCart", lang);
+
   backdrop.classList.add("open");
   document.body.style.overflow = "hidden";
 }
@@ -227,14 +278,17 @@ function wireContactForm() {
     const email = form.email.value.trim();
     const product = form.product.value;
     const message = form.message.value.trim();
-    const subject = encodeURIComponent(`[Hoa Tay Viet] ${lang === "en" ? "Quote request" : "Yêu cầu báo giá"} — ${product}`);
+    const cartItems = getCartDetailed();
+    const subjectLabel = cartItems.length
+      ? (lang === "en" ? "Cart quote request" : "Yêu cầu báo giá giỏ hàng")
+      : `${lang === "en" ? "Quote request" : "Yêu cầu báo giá"}${product ? " — " + product : ""}`;
+    const subject = encodeURIComponent(`[Hoa Tay Viet] ${subjectLabel}`);
     const bodyLines = [
       `${lang === "en" ? "Name" : "Họ tên"}: ${name}`,
       `Email: ${email}`,
-      `${lang === "en" ? "Product" : "Sản phẩm"}: ${product}`,
-      "",
-      message,
     ];
+    if (product) bodyLines.push(`${lang === "en" ? "Product" : "Sản phẩm"}: ${product}`);
+    bodyLines.push("", message);
     const body = encodeURIComponent(bodyLines.join("\n"));
     window.location.href = `mailto:hoatayviet.modelship@gmail.com?subject=${subject}&body=${body}`;
     const success = document.querySelector("[data-form-success]");
@@ -255,6 +309,156 @@ function initProductSelect() {
   if (preset) select.value = preset;
 }
 
+/* ---------- cart: header badge (all pages) ---------- */
+function updateCartBadges() {
+  const count = getCartCount();
+  document.querySelectorAll("[data-cart-badge]").forEach((el) => {
+    el.textContent = count;
+    el.setAttribute("data-empty", count === 0 ? "true" : "false");
+  });
+}
+
+/* ---------- cart: quick-add button on every product card ---------- */
+function wireQuickAdd() {
+  document.querySelectorAll("[data-add-to-cart]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      addToCart(btn.getAttribute("data-add-to-cart"), 1);
+      flashAdded(btn);
+    });
+  });
+}
+
+/* ---------- cart: slide-out drawer, built once on first open ---------- */
+function ensureCartDrawer() {
+  let backdrop = document.querySelector("[data-cart-drawer-backdrop]");
+  if (backdrop) return backdrop;
+  backdrop = document.createElement("div");
+  backdrop.className = "cart-drawer-backdrop";
+  backdrop.setAttribute("data-cart-drawer-backdrop", "");
+  backdrop.innerHTML = `<div class="cart-drawer" role="dialog" aria-modal="true">
+    <div class="cart-drawer-head">
+      <h3 data-i18n="cart.title">Giỏ hàng</h3>
+      <button class="cart-drawer-close" type="button" data-cart-close aria-label="Close">&times;</button>
+    </div>
+    <div class="cart-drawer-body" data-cart-body></div>
+    <div class="cart-drawer-foot" data-cart-foot></div>
+  </div>`;
+  document.body.appendChild(backdrop);
+  backdrop.addEventListener("click", (e) => { if (e.target === backdrop) closeCartDrawer(); });
+  backdrop.querySelector("[data-cart-close]").addEventListener("click", closeCartDrawer);
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeCartDrawer(); });
+  return backdrop;
+}
+
+function closeCartDrawer() {
+  document.querySelector("[data-cart-drawer-backdrop]")?.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function renderCartDrawer() {
+  const backdrop = document.querySelector("[data-cart-drawer-backdrop]");
+  if (!backdrop) return;
+  const lang = getLang();
+  backdrop.querySelector("[data-i18n='cart.title']").textContent = t("cart.title", lang);
+  const items = getCartDetailed();
+  const body = backdrop.querySelector("[data-cart-body]");
+  const foot = backdrop.querySelector("[data-cart-foot]");
+
+  if (!items.length) {
+    body.innerHTML = `<p class="cart-empty">${t("cart.empty", lang)}</p>`;
+    foot.innerHTML = "";
+    return;
+  }
+
+  body.innerHTML = items
+    .map(
+      (i) => `<div class="cart-line" data-cart-line="${i.slug}">
+        <img src="${i.product.image}" alt="${i.product.name}">
+        <div>
+          <div class="cart-line-name">${i.product.name}</div>
+          <div class="cart-line-price">${formatUsd(i.product.price)}</div>
+          <div class="cart-qty">
+            <button type="button" data-cart-down="${i.slug}" aria-label="-">${ICONS.minus}</button>
+            <span>${i.qty}</span>
+            <button type="button" data-cart-up="${i.slug}" aria-label="+">${ICONS.plus}</button>
+          </div>
+        </div>
+        <button class="cart-line-remove" type="button" data-cart-remove="${i.slug}" aria-label="Remove">${ICONS.trash}</button>
+      </div>`
+    )
+    .join("");
+
+  foot.innerHTML = `<div class="cart-subtotal-row"><span>${t("cart.subtotal", lang)}</span><b>${formatUsd(getCartTotal())}</b></div>
+    <a class="btn btn-primary" href="contact.html?cart=1">${t("cart.checkout", lang)}</a>
+    <button class="cart-clear" type="button" data-cart-clear-drawer>${t("cart.clear", lang)}</button>`;
+
+  body.querySelectorAll("[data-cart-down]").forEach((b) =>
+    b.addEventListener("click", () => {
+      const slug = b.getAttribute("data-cart-down");
+      const item = getCartDetailed().find((i) => i.slug === slug);
+      if (item) setCartQty(slug, item.qty - 1);
+    })
+  );
+  body.querySelectorAll("[data-cart-up]").forEach((b) =>
+    b.addEventListener("click", () => {
+      const slug = b.getAttribute("data-cart-up");
+      const item = getCartDetailed().find((i) => i.slug === slug);
+      if (item) setCartQty(slug, item.qty + 1);
+    })
+  );
+  body.querySelectorAll("[data-cart-remove]").forEach((b) =>
+    b.addEventListener("click", () => removeFromCart(b.getAttribute("data-cart-remove")))
+  );
+  foot.querySelector("[data-cart-clear-drawer]")?.addEventListener("click", clearCart);
+}
+
+function openCartDrawer() {
+  const backdrop = ensureCartDrawer();
+  renderCartDrawer();
+  backdrop.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function wireCartToggles() {
+  document.querySelectorAll("[data-cart-toggle]").forEach((btn) => {
+    btn.addEventListener("click", openCartDrawer);
+  });
+}
+
+/* ---------- cart: summary block on the contact page ---------- */
+function initCartSummary() {
+  const box = document.querySelector("[data-cart-summary]");
+  if (!box) return;
+
+  function render() {
+    const lang = getLang();
+    const items = getCartDetailed();
+    if (!items.length) {
+      box.hidden = true;
+      return;
+    }
+    box.hidden = false;
+    box.querySelector("[data-cart-summary-lines]").innerHTML = items
+      .map((i) => `<div class="cart-summary-line"><span>${i.qty} × ${i.product.name}</span><b>${formatUsd(i.qty * i.product.price)}</b></div>`)
+      .join("");
+    box.querySelector("[data-cart-summary-total]").textContent = formatUsd(getCartTotal());
+
+    const message = document.querySelector("[name=message]");
+    if (message && !message.value.trim()) message.value = cartSummaryText(lang);
+  }
+
+  box.querySelector("[data-cart-clear]")?.addEventListener("click", () => {
+    clearCart();
+    const message = document.querySelector("[name=message]");
+    if (message && message.value.trim() === cartSummaryText(getLang())) message.value = "";
+  });
+
+  render();
+  document.addEventListener("cartchange", render);
+  document.addEventListener("langchange", render);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Same rule as i18n.js: the static markup already reads correctly in
   // Vietnamese, so these two relabeling passes only run once the visitor
@@ -267,6 +471,15 @@ document.addEventListener("DOMContentLoaded", () => {
   initSearch();
   wireProductCards();
   wireContactForm();
+  wireQuickAdd();
+  wireCartToggles();
+  initCartSummary();
+  updateCartBadges();
+
+  document.addEventListener("cartchange", () => {
+    updateCartBadges();
+    renderCartDrawer();
+  });
 
   document.addEventListener("langchange", () => {
     relabelCategoriesAndProducts();

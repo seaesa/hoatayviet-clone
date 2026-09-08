@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,440;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/site/logo.jpg">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -28,15 +29,7 @@
 <header class="site-header">
   <div class="container header-main">
     <a class="brand" href="index.html">
-      <span class="brand-mark" style="color:var(--teak)">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 27h28l-3 6H9l-3-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M20 27V8" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M20 10c5 1 8 4 9 8h-9v-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M20 13c-3.5 1-6 3.5-7 6h7v-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span class="brand-name">Hoa Tay Việt<small>MODEL SHIP WORKSHOP</small></span>
+      <img class="brand-logo" src="assets/img/site/logo.jpg" alt="Hoa Tay Việt">
     </a>
     <nav class="main-nav">
       <a href="index.html" data-nav-link data-i18n="nav.home">Trang chủ</a>
@@ -62,6 +55,7 @@
           <button type="submit" data-i18n-aria="search.label" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="m19.5 19.5-4.2-4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
         </form>
       </div>
+      <button class="cart-toggle" type="button" data-cart-toggle data-i18n-aria="nav.cart" aria-label="Giỏ hàng"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg><span class="cart-badge" data-cart-badge data-empty="true">0</span></button>
       <a class="btn btn-primary btn-sm" href="contact.html" data-i18n="nav.cta">Yêu cầu báo giá</a>
       <button class="menu-toggle" data-menu-toggle aria-label="Mở menu" type="button"><span></span></button>
     </div>
@@ -76,6 +70,10 @@
       <button type="submit" data-i18n-aria="search.label" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="m19.5 19.5-4.2-4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
     </form>
   </div>
+  <button class="mobile-cart-link" type="button" data-cart-toggle>
+    <span data-i18n="nav.cart">Giỏ hàng</span>
+    <span class="cart-badge" data-cart-badge data-empty="true">0</span>
+  </button>
   <a href="index.html" data-i18n="nav.home">Trang chủ</a>
   <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
   <a href="catalog.html" data-i18n="nav.catalog">Sản phẩm</a>
@@ -117,7 +115,12 @@
     <p data-catalog-empty data-i18n="catalog.empty" style="display:none; text-align:center; padding:40px 0; color:var(--ink-45);">Không tìm thấy mẫu nào trong nhóm này.</p>
     <div class="product-grid" data-catalog-grid>
       <article class="product-card" data-slug="callista" data-cat="cruise-yachts modern-yachts" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/callista-mo-hinh-thuen.gif" alt="Callista" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/callista-mo-hinh-thuen.gif" alt="Callista" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="callista" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cruise-yachts">Tàu Du Lịch – Du Thuyền</span>
           <span class="product-name">Callista</span>
@@ -129,7 +132,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="broom-35-european" data-cat="cruise-yachts modern-yachts" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/broom-35-european-mo-hinh-tau-thuyen.gif" alt="Broom 35 European" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/broom-35-european-mo-hinh-tau-thuyen.gif" alt="Broom 35 European" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="broom-35-european" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cruise-yachts">Tàu Du Lịch – Du Thuyền</span>
           <span class="product-name">Broom 35 European</span>
@@ -141,7 +149,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="asuka-ii" data-cat="cruise-yachts" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/asuka-ll-mo-hinh-tau-asuka-ll.gif" alt="Asuka II" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/asuka-ll-mo-hinh-tau-asuka-ll.gif" alt="Asuka II" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="asuka-ii" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cruise-yachts">Tàu Du Lịch – Du Thuyền</span>
           <span class="product-name">Asuka II</span>
@@ -153,7 +166,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="mississippi" data-cat="cruise-yachts" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/mississippi-mo-hinh-tau-mississippi.gif" alt="Mississippi" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/mississippi-mo-hinh-tau-mississippi.gif" alt="Mississippi" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="mississippi" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cruise-yachts">Tàu Du Lịch – Du Thuyền</span>
           <span class="product-name">Mississippi</span>
@@ -165,7 +183,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="lagoon-450" data-cat="cruise-yachts modern-yachts" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/lagoon-450-lagoon-450-yacht-model.gif" alt="Lagoon 450" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/lagoon-450-lagoon-450-yacht-model.gif" alt="Lagoon 450" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="lagoon-450" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cruise-yachts">Tàu Du Lịch – Du Thuyền</span>
           <span class="product-name">Lagoon 450</span>
@@ -177,7 +200,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="laustral" data-cat="cruise-yachts" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/l-austrl-laustrl-mo-hinh-tau.gif" alt="L'Austral" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/l-austrl-laustrl-mo-hinh-tau.gif" alt="L'Austral" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="laustral" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cruise-yachts">Tàu Du Lịch – Du Thuyền</span>
           <span class="product-name">L'Austral</span>
@@ -189,7 +217,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="erzherzog-franz-ferdinand" data-cat="cruise-yachts" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/erzherzog-franz-ferdinand-mo-hinh-tau-erzherzog-franz-ferdinand.gif" alt="Erzherzog Franz Ferdinand" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/erzherzog-franz-ferdinand-mo-hinh-tau-erzherzog-franz-ferdinand.gif" alt="Erzherzog Franz Ferdinand" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="erzherzog-franz-ferdinand" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cruise-yachts">Tàu Du Lịch – Du Thuyền</span>
           <span class="product-name">Erzherzog Franz Ferdinand</span>
@@ -201,7 +234,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="astor" data-cat="cruise-yachts" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/astor-mo-hinh-tau-astor.gif" alt="Astor" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/astor-mo-hinh-tau-astor.gif" alt="Astor" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="astor" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cruise-yachts">Tàu Du Lịch – Du Thuyền</span>
           <span class="product-name">Astor</span>
@@ -213,7 +251,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="battersea" data-cat="cargo-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/batterses-batterses-mo-hinh-thuyen.gif" alt="Battersea" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/batterses-batterses-mo-hinh-thuyen.gif" alt="Battersea" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="battersea" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cargo-ships">Tàu Chở Hàng</span>
           <span class="product-name">Battersea</span>
@@ -225,7 +268,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="star-1" data-cat="cargo-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/star-1-star-1-mo-hinh-thuyen.jpg" alt="Star 1" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/star-1-star-1-mo-hinh-thuyen.jpg" alt="Star 1" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="star-1" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cargo-ships">Tàu Chở Hàng</span>
           <span class="product-name">Star 1</span>
@@ -237,7 +285,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="anteo" data-cat="cargo-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/anteo-anteo.jpg" alt="Anteo" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/anteo-anteo.jpg" alt="Anteo" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="anteo" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cargo-ships">Tàu Chở Hàng</span>
           <span class="product-name">Anteo</span>
@@ -249,7 +302,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="american-scout" data-cat="cargo-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/american-sconut-american-sconut.gif" alt="American Scout" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/american-sconut-american-sconut.gif" alt="American Scout" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="american-scout" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="cargo-ships">Tàu Chở Hàng</span>
           <span class="product-name">American Scout</span>
@@ -261,7 +319,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="wasa" data-cat="sailing-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/wasa-mo-hinh-thuyen-buom-2.gif" alt="Wasa" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/wasa-mo-hinh-thuyen-buom-2.gif" alt="Wasa" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="wasa" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="sailing-ships">Thuyền Buồm</span>
           <span class="product-name">Wasa</span>
@@ -273,7 +336,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="htv-sailing-ship" data-cat="sailing-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/thuyen-buom-htv-mo-hinh-thuyen-buom.gif" alt="HTV Sailing Ship" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/thuyen-buom-htv-mo-hinh-thuyen-buom.gif" alt="HTV Sailing Ship" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="htv-sailing-ship" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="sailing-ships">Thuyền Buồm</span>
           <span class="product-name">HTV Sailing Ship</span>
@@ -285,7 +353,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="victory" data-cat="sailing-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/victory-victory.jpg" alt="HMS Victory" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/victory-victory.jpg" alt="HMS Victory" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="victory" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="sailing-ships">Thuyền Buồm</span>
           <span class="product-name">HMS Victory</span>
@@ -297,7 +370,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="thorsen-axel-1810" data-cat="sailing-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/thorsen-axel-1810-na-uy-model-ships-thorsen-axel-1810-na-uy.gif" alt="Thorsen Axel 1810" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/thorsen-axel-1810-na-uy-model-ships-thorsen-axel-1810-na-uy.gif" alt="Thorsen Axel 1810" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="thorsen-axel-1810" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="sailing-ships">Thuyền Buồm</span>
           <span class="product-name">Thorsen Axel 1810</span>
@@ -309,7 +387,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="la-jacinthe" data-cat="sailing-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/la-jacinthe-thuyen-my-nghe.gif" alt="La Jacinthe" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/la-jacinthe-thuyen-my-nghe.gif" alt="La Jacinthe" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="la-jacinthe" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="sailing-ships">Thuyền Buồm</span>
           <span class="product-name">La Jacinthe</span>
@@ -321,7 +404,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="christian-radich" data-cat="sailing-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/christian-radich-christian-radich-model.gif" alt="Christian Radich" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/christian-radich-christian-radich-model.gif" alt="Christian Radich" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="christian-radich" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="sailing-ships">Thuyền Buồm</span>
           <span class="product-name">Christian Radich</span>
@@ -333,7 +421,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="batavia" data-cat="sailing-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/batavia-mo-hinh-thuyen-batavia.gif" alt="Batavia" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/batavia-mo-hinh-thuyen-batavia.gif" alt="Batavia" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="batavia" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="sailing-ships">Thuyền Buồm</span>
           <span class="product-name">Batavia</span>
@@ -345,7 +438,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="ha-long-junk" data-cat="sailing-ships" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/thuyen-buom-ha-long-mo-hinh-thuyen.jpg" alt="Ha Long Sailing Junk" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/thuyen-buom-ha-long-mo-hinh-thuyen.jpg" alt="Ha Long Sailing Junk" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="ha-long-junk" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="sailing-ships">Thuyền Buồm</span>
           <span class="product-name">Ha Long Sailing Junk</span>
@@ -357,7 +455,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="xuong" data-cat="leisure-boats" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/xuong-xuong-go.gif" alt="Xuong Wooden Skiff" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/xuong-xuong-go.gif" alt="Xuong Wooden Skiff" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="xuong" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="leisure-boats">Thuyền (Dùng Đi Dạo)</span>
           <span class="product-name">Xuong Wooden Skiff</span>
@@ -369,7 +472,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="htv-sailing-ship-mini" data-cat="leisure-boats" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/thuyen-buom-htv-mo-hinh-thuyen-buom-2.gif" alt="HTV Sailing Ship — Mini" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/thuyen-buom-htv-mo-hinh-thuyen-buom-2.gif" alt="HTV Sailing Ship — Mini" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="htv-sailing-ship-mini" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="leisure-boats">Thuyền (Dùng Đi Dạo)</span>
           <span class="product-name">HTV Sailing Ship — Mini</span>
@@ -381,7 +489,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="ships-desk" data-cat="furniture" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/ban-hoc-sinh-ban-hoc-sinh.gif" alt="Ship's Desk" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/ban-hoc-sinh-ban-hoc-sinh.gif" alt="Ship's Desk" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="ships-desk" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="furniture">Nội Thất</span>
           <span class="product-name">Ship's Desk</span>
@@ -393,7 +506,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="vanity-table" data-cat="furniture" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/ban-trang-diem-noi-that-go-tram.gif" alt="Vanity Table" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/ban-trang-diem-noi-that-go-tram.gif" alt="Vanity Table" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="vanity-table" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="furniture">Nội Thất</span>
           <span class="product-name">Vanity Table</span>
@@ -405,7 +523,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="wooden-wardrobe" data-cat="furniture" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/tu-go-tu-go.gif" alt="Wooden Wardrobe" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/tu-go-tu-go.gif" alt="Wooden Wardrobe" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="wooden-wardrobe" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="furniture">Nội Thất</span>
           <span class="product-name">Wooden Wardrobe</span>
@@ -417,7 +540,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="hull-bar-counter" data-cat="furniture" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/quay-ba-quay-ba.gif" alt="Hull Bar Counter" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/quay-ba-quay-ba.gif" alt="Hull Bar Counter" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="hull-bar-counter" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="furniture">Nội Thất</span>
           <span class="product-name">Hull Bar Counter</span>
@@ -429,7 +557,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="boat-shaped-table" data-cat="furniture" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/ban-hinh-thuyen-ban-hinh-thuyen.gif" alt="Boat-Shaped Table" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/ban-hinh-thuyen-ban-hinh-thuyen.gif" alt="Boat-Shaped Table" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="boat-shaped-table" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="furniture">Nội Thất</span>
           <span class="product-name">Boat-Shaped Table</span>
@@ -441,7 +574,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="wooden-table" data-cat="furniture" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/ban-go-ban-go.gif" alt="Wooden Table" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/ban-go-ban-go.gif" alt="Wooden Table" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="wooden-table" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="furniture">Nội Thất</span>
           <span class="product-name">Wooden Table</span>
@@ -453,7 +591,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="ships-cannon" data-cat="other" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/cannon-cannon.gif" alt="Ship's Cannon" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/cannon-cannon.gif" alt="Ship's Cannon" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="ships-cannon" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="other">Sản Phẩm Khác</span>
           <span class="product-name">Ship's Cannon</span>
@@ -465,7 +608,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="ship-relief-panel-1" data-cat="other" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/tranh-thuyen-tranh-thuyen-2.gif" alt="Ship Relief Panel I" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/tranh-thuyen-tranh-thuyen-2.gif" alt="Ship Relief Panel I" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="ship-relief-panel-1" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="other">Sản Phẩm Khác</span>
           <span class="product-name">Ship Relief Panel I</span>
@@ -477,7 +625,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="ship-relief-panel-2" data-cat="other" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/tranh-thuyen-tranh-thuyen.gif" alt="Ship Relief Panel II" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/tranh-thuyen-tranh-thuyen.gif" alt="Ship Relief Panel II" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="ship-relief-panel-2" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="other">Sản Phẩm Khác</span>
           <span class="product-name">Ship Relief Panel II</span>
@@ -489,7 +642,12 @@
         </div>
       </article>
       <article class="product-card" data-slug="commemorative-plaque" data-cat="other" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="assets/img/products/ky-niem-chuong-ky-niem-chuong.gif" alt="Commemorative Plaque" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="assets/img/products/ky-niem-chuong-ky-niem-chuong.gif" alt="Commemorative Plaque" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="commemorative-plaque" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg></button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="other">Sản Phẩm Khác</span>
           <span class="product-name">Commemorative Plaque</span>
@@ -544,6 +702,7 @@
 <script src="assets/js/icons.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/cart.js"></script>
 <script src="assets/js/main.js"></script>
 <a class="floating-call" href="tel:+84908062685" aria-label="Gọi 0908 062 685">
   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 3h3l2 5-2.5 2A11 11 0 0 0 14 15.5l2-2.5 5 2v3a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z"/></svg>

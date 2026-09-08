@@ -34,7 +34,10 @@ function categoryNames(catSlugs, lang) {
 
 function productCard(p) {
   return `      <article class="product-card" data-slug="${p.slug}" data-cat="${p.categories.join(" ")}" tabindex="0" role="button" aria-haspopup="dialog">
-        <div class="product-photo"><img src="${p.image}" alt="${esc(p.name)}" loading="lazy" width="400" height="300"></div>
+        <div class="product-photo">
+          <img src="${p.image}" alt="${esc(p.name)}" loading="lazy" width="400" height="300">
+          <button class="quick-add" type="button" data-add-to-cart="${p.slug}" data-i18n-aria="cart.addToCart" aria-label="Thêm vào giỏ">${ICONS.plus}</button>
+        </div>
         <div class="product-body">
           <span class="product-cat" data-cat-label="${p.categories[0]}">${esc(categoryNames([p.categories[0]], "vi"))}</span>
           <span class="product-name">${esc(p.name)}</span>
