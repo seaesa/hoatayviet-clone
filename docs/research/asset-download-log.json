@@ -1,0 +1,657 @@
+[
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/logo.jpg",
+    "dest": "assets\\images\\site\\logo.jpg",
+    "status": "ok 10278"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/cropped-logo-32x32.jpg",
+    "dest": "assets\\images\\site\\cropped-logo-32x32.jpg",
+    "status": "ok 903"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/cropped-logo-192x192.jpg",
+    "dest": "assets\\images\\site\\cropped-logo-192x192.jpg",
+    "status": "ok 5561"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/cropped-logo-180x180.jpg",
+    "dest": "assets\\images\\site\\cropped-logo-180x180.jpg",
+    "status": "ok 5133"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/0088_n-600x600-1.gif",
+    "dest": "assets\\images\\products\\0088_n-600x600-1.gif",
+    "status": "ok 185329"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/000136_n-287x300-1.gif",
+    "dest": "assets\\images\\products\\000136_n-287x300-1.gif",
+    "status": "ok 46146"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/0088_n-300x258-1.gif",
+    "dest": "assets\\images\\products\\0088_n-300x258-1.gif",
+    "status": "ok 44081"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/00077n-600x600-1.gif",
+    "dest": "assets\\images\\products\\00077n-600x600-1.gif",
+    "status": "ok 216737"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/0012_n-600x600-1.gif",
+    "dest": "assets\\images\\products\\0012_n-600x600-1.gif",
+    "status": "ok 213088"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/0011_n-300x226-1.gif",
+    "dest": "assets\\images\\products\\0011_n-300x226-1.gif",
+    "status": "ok 48440"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/0088_n-600x600-1-300x300.gif",
+    "dest": "assets\\images\\products\\0088_n-600x600-1-300x300.gif",
+    "status": "ok 46997"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/300BHS.gif",
+    "dest": "assets\\images\\products\\300BHS.gif",
+    "status": "ok 64664"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/3ead9.gif",
+    "dest": "assets\\images\\products\\3ead9.gif",
+    "status": "ok 550156"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/9fc.gif",
+    "dest": "assets\\images\\products\\9fc.gif",
+    "status": "ok 47954"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/27H1-552x600-1.gif",
+    "dest": "assets\\images\\products\\27H1-552x600-1.gif",
+    "status": "ok 231254"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/27HHd-300x300-1.gif",
+    "dest": "assets\\images\\products\\27HHd-300x300-1.gif",
+    "status": "ok 67136"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/90H4.gif",
+    "dest": "assets\\images\\products\\90H4.gif",
+    "status": "ok 34087"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/9fc-200x300.gif",
+    "dest": "assets\\images\\products\\9fc-200x300.gif",
+    "status": "ok 47756"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/BAR1SAU-500x600-1.gif",
+    "dest": "assets\\images\\products\\BAR1SAU-500x600-1.gif",
+    "status": "ok 206907"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/BAR1MOI.gif",
+    "dest": "assets\\images\\products\\BAR1MOI.gif",
+    "status": "ok 46451"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/BAR1SAU-500x600-1-300x300.gif",
+    "dest": "assets\\images\\products\\BAR1SAU-500x600-1-300x300.gif",
+    "status": "ok 62950"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/2bTHUYENsau-300x300-1.gif",
+    "dest": "assets\\images\\products\\2bTHUYENsau-300x300-1.gif",
+    "status": "ok 55526"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/2bTHUYEN.gif",
+    "dest": "assets\\images\\products\\2bTHUYEN.gif",
+    "status": "ok 46930"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/2bTHUYENsau-300x300-1-300x300.gif",
+    "dest": "assets\\images\\products\\2bTHUYENsau-300x300-1-300x300.gif",
+    "status": "ok 55533"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/BANe.gif",
+    "dest": "assets\\images\\products\\BANe.gif",
+    "status": "ok 69649"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/BANe-300x300-1.gif",
+    "dest": "assets\\images\\products\\BANe-300x300-1.gif",
+    "status": "ok 61083"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/BANe-300x300.gif",
+    "dest": "assets\\images\\products\\BANe-300x300.gif",
+    "status": "ok 55888"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0468-300x300-1.gif",
+    "dest": "assets\\images\\products\\IMG_0468-300x300-1.gif",
+    "status": "ok 50459"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0446.Sau_.gif",
+    "dest": "assets\\images\\products\\IMG_0446.Sau_.gif",
+    "status": "ok 85495"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0430-300x300-1.gif",
+    "dest": "assets\\images\\products\\IMG_0430-300x300-1.gif",
+    "status": "ok 42115"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0468-300x300-1-300x300.gif",
+    "dest": "assets\\images\\products\\IMG_0468-300x300-1-300x300.gif",
+    "status": "ok 50466"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_1224Sau-600x450.gif",
+    "dest": "assets\\images\\products\\100_1224Sau-600x450.gif",
+    "status": "ok 190317"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_1224Sau-300x300.gif",
+    "dest": "assets\\images\\products\\100_1224Sau-300x300.gif",
+    "status": "ok 61703"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/FFFFFFFFFFFFFFFFFFF-300x207-1.gif",
+    "dest": "assets\\images\\products\\FFFFFFFFFFFFFFFFFFF-300x207-1.gif",
+    "status": "ok 34360"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/FFFFFFFFFFFFFFFFFFF.gif",
+    "dest": "assets\\images\\products\\FFFFFFFFFFFFFFFFFFF.gif",
+    "status": "ok 33801"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/19_n300.gif",
+    "dest": "assets\\images\\products\\19_n300.gif",
+    "status": "ok 40522"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/1_n.gif",
+    "dest": "assets\\images\\products\\1_n.gif",
+    "status": "ok 242465"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/2_n.gif",
+    "dest": "assets\\images\\products\\2_n.gif",
+    "status": "ok 186621"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/18_n.gif",
+    "dest": "assets\\images\\products\\18_n.gif",
+    "status": "ok 250803"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/z4017f79e9.gif",
+    "dest": "assets\\images\\products\\z4017f79e9.gif",
+    "status": "ok 45455"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/800.jpg",
+    "dest": "assets\\images\\products\\800.jpg",
+    "status": "ok 63169"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/555.jpg",
+    "dest": "assets\\images\\products\\555.jpg",
+    "status": "ok 102786"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/222.jpg",
+    "dest": "assets\\images\\products\\222.jpg",
+    "status": "ok 91722"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0214-600x450.jpg",
+    "dest": "assets\\images\\products\\IMG_0214-600x450.jpg",
+    "status": "ok 40441"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0220-600x600-1.jpg",
+    "dest": "assets\\images\\products\\IMG_0220-600x600-1.jpg",
+    "status": "ok 52595"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0216-600x600-1.jpg",
+    "dest": "assets\\images\\products\\IMG_0216-600x600-1.jpg",
+    "status": "ok 57789"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0215-600x450.jpg",
+    "dest": "assets\\images\\products\\IMG_0215-600x450.jpg",
+    "status": "ok 42323"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0214-1024x768-1-600x450.jpg",
+    "dest": "assets\\images\\products\\IMG_0214-1024x768-1-600x450.jpg",
+    "status": "ok 39229"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0221-1024x768-1-600x450.jpg",
+    "dest": "assets\\images\\products\\IMG_0221-1024x768-1-600x450.jpg",
+    "status": "ok 41887"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0214-300x300.jpg",
+    "dest": "assets\\images\\products\\IMG_0214-300x300.jpg",
+    "status": "ok 16546"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3196ggg7777-600x498-1.gif",
+    "dest": "assets\\images\\products\\IMG_3196ggg7777-600x498-1.gif",
+    "status": "ok 199218"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3201gg222-600x589-1.gif",
+    "dest": "assets\\images\\products\\IMG_3201gg222-600x589-1.gif",
+    "status": "ok 237885"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3200ggg5555-300x300-1.gif",
+    "dest": "assets\\images\\products\\IMG_3200ggg5555-300x300-1.gif",
+    "status": "ok 47926"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3200ggg5555-300x189-1.gif",
+    "dest": "assets\\images\\products\\IMG_3200ggg5555-300x189-1.gif",
+    "status": "ok 32737"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3196ggg7777-600x498-1-300x300.gif",
+    "dest": "assets\\images\\products\\IMG_3196ggg7777-600x498-1-300x300.gif",
+    "status": "ok 51817"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/78480_n300.gif",
+    "dest": "assets\\images\\products\\78480_n300.gif",
+    "status": "ok 41363"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/70160_n.gif",
+    "dest": "assets\\images\\products\\70160_n.gif",
+    "status": "ok 177924"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/81383_n.gif",
+    "dest": "assets\\images\\products\\81383_n.gif",
+    "status": "ok 253139"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/698178507_n.gif",
+    "dest": "assets\\images\\products\\698178507_n.gif",
+    "status": "ok 335515"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/96659491649_n.gif",
+    "dest": "assets\\images\\products\\96659491649_n.gif",
+    "status": "ok 301724"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/46976_n300.gif",
+    "dest": "assets\\images\\products\\46976_n300.gif",
+    "status": "ok 41655"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/4832_n-1.gif",
+    "dest": "assets\\images\\products\\4832_n-1.gif",
+    "status": "ok 218690"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/824_n.gif",
+    "dest": "assets\\images\\products\\824_n.gif",
+    "status": "ok 295502"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/2237824_n.gif",
+    "dest": "assets\\images\\products\\2237824_n.gif",
+    "status": "ok 295502"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/95576_n.gif",
+    "dest": "assets\\images\\products\\95576_n.gif",
+    "status": "ok 270809"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/3392_n.gif",
+    "dest": "assets\\images\\products\\3392_n.gif",
+    "status": "ok 312244"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/7392_n.gif",
+    "dest": "assets\\images\\products\\7392_n.gif",
+    "status": "ok 275374"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/6_n300.gif",
+    "dest": "assets\\images\\products\\6_n300.gif",
+    "status": "ok 62788"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/1b9085e25.gif",
+    "dest": "assets\\images\\products\\1b9085e25.gif",
+    "status": "ok 290756"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/04a441c490d5.gif",
+    "dest": "assets\\images\\products\\04a441c490d5.gif",
+    "status": "ok 205202"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/aa1c9f3a.gif",
+    "dest": "assets\\images\\products\\aa1c9f3a.gif",
+    "status": "ok 317865"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/212_n.gif",
+    "dest": "assets\\images\\products\\212_n.gif",
+    "status": "ok 328981"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_2207.gif",
+    "dest": "assets\\images\\products\\100_2207.gif",
+    "status": "ok 70840"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_2214.gif",
+    "dest": "assets\\images\\products\\100_2214.gif",
+    "status": "ok 467400"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/44e69f146d8.gif",
+    "dest": "assets\\images\\products\\44e69f146d8.gif",
+    "status": "ok 61935"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG921-500x600-1.gif",
+    "dest": "assets\\images\\products\\IMG921-500x600-1.gif",
+    "status": "ok 170154"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG20023-300x300-1.gif",
+    "dest": "assets\\images\\products\\IMG20023-300x300-1.gif",
+    "status": "ok 51673"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/7db4.gif",
+    "dest": "assets\\images\\products\\7db4.gif",
+    "status": "ok 353901"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/146d800.gif",
+    "dest": "assets\\images\\products\\146d800.gif",
+    "status": "ok 415013"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/44e69f146d8-300x300.gif",
+    "dest": "assets\\images\\products\\44e69f146d8-300x300.gif",
+    "status": "ok 57512"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0406k.gif",
+    "dest": "assets\\images\\products\\IMG_0406k.gif",
+    "status": "ok 60044"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0408.gif",
+    "dest": "assets\\images\\products\\IMG_0408.gif",
+    "status": "ok 275088"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0406.gif",
+    "dest": "assets\\images\\products\\IMG_0406.gif",
+    "status": "ok 343744"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3164a.gif",
+    "dest": "assets\\images\\products\\IMG_3164a.gif",
+    "status": "ok 57663"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3164ww22-768x524-1.gif",
+    "dest": "assets\\images\\products\\IMG_3164ww22-768x524-1.gif",
+    "status": "ok 202416"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3162www555-768x576-1.gif",
+    "dest": "assets\\images\\products\\IMG_3162www555-768x576-1.gif",
+    "status": "ok 243402"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3161ww44-600x600-1.gif",
+    "dest": "assets\\images\\products\\IMG_3161ww44-600x600-1.gif",
+    "status": "ok 232260"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0305-2.gif",
+    "dest": "assets\\images\\products\\IMG_0305-2.gif",
+    "status": "ok 63962"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0308-1-150x150-1.gif",
+    "dest": "assets\\images\\products\\IMG_0308-1-150x150-1.gif",
+    "status": "ok 15495"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0304-300x300-1.gif",
+    "dest": "assets\\images\\products\\IMG_0304-300x300-1.gif",
+    "status": "ok 48764"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0303.gif",
+    "dest": "assets\\images\\products\\IMG_0303.gif",
+    "status": "ok 132193"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_1677300.gif",
+    "dest": "assets\\images\\products\\IMG_1677300.gif",
+    "status": "ok 63703"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_1681.gif",
+    "dest": "assets\\images\\products\\IMG_1681.gif",
+    "status": "ok 203952"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_1677.gif",
+    "dest": "assets\\images\\products\\IMG_1677.gif",
+    "status": "ok 325710"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_300.gif",
+    "dest": "assets\\images\\products\\IMG_300.gif",
+    "status": "ok 72309"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_0705.gif",
+    "dest": "assets\\images\\products\\IMG_0705.gif",
+    "status": "ok 481300"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_0707.gif",
+    "dest": "assets\\images\\products\\IMG_0707.gif",
+    "status": "ok 367077"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_0382.gif",
+    "dest": "assets\\images\\products\\IMG_0382.gif",
+    "status": "ok 354235"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_0384.gif",
+    "dest": "assets\\images\\products\\IMG_0384.gif",
+    "status": "ok 293060"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_0381.gif",
+    "dest": "assets\\images\\products\\IMG_0381.gif",
+    "status": "ok 275750"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_0711.gif",
+    "dest": "assets\\images\\products\\IMG_0711.gif",
+    "status": "ok 316193"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_0712.gif",
+    "dest": "assets\\images\\products\\IMG_0712.gif",
+    "status": "ok 307834"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/IMG_1683.gif",
+    "dest": "assets\\images\\products\\IMG_1683.gif",
+    "status": "ok 530725"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/WP_20140928_023.gif",
+    "dest": "assets\\images\\products\\WP_20140928_023.gif",
+    "status": "ok 380297"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/1300.gif",
+    "dest": "assets\\images\\products\\1300.gif",
+    "status": "ok 65777"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/100_1180.gif",
+    "dest": "assets\\images\\products\\100_1180.gif",
+    "status": "ok 328767"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/1800.gif",
+    "dest": "assets\\images\\products\\1800.gif",
+    "status": "ok 321240"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/WASA.B002.gif",
+    "dest": "assets\\images\\products\\WASA.B002.gif",
+    "status": "ok 361684"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/1300-300x300.gif",
+    "dest": "assets\\images\\products\\1300-300x300.gif",
+    "status": "ok 73991"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3700.gif",
+    "dest": "assets\\images\\products\\IMG_3700.gif",
+    "status": "ok 63703"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/800VV.jpg",
+    "dest": "assets\\images\\products\\800VV.jpg",
+    "status": "ok 98638"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_3701.gif",
+    "dest": "assets\\images\\products\\IMG_3701.gif",
+    "status": "ok 308231"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_2146t.gif",
+    "dest": "assets\\images\\products\\100_2146t.gif",
+    "status": "ok 75428"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_2146th.gif",
+    "dest": "assets\\images\\products\\100_2146th.gif",
+    "status": "ok 291690"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/la-jacinthe.gif",
+    "dest": "assets\\images\\products\\la-jacinthe.gif",
+    "status": "ok 64414"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_1894...cin_.gif",
+    "dest": "assets\\images\\products\\100_1894...cin_.gif",
+    "status": "ok 228291"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_1892.gif",
+    "dest": "assets\\images\\products\\100_1892.gif",
+    "status": "ok 364018"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0766.gif",
+    "dest": "assets\\images\\products\\IMG_0766.gif",
+    "status": "ok 265650"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0771.gif",
+    "dest": "assets\\images\\products\\IMG_0771.gif",
+    "status": "ok 277716"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_1885.gif",
+    "dest": "assets\\images\\products\\100_1885.gif",
+    "status": "ok 75677"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_1880.gif",
+    "dest": "assets\\images\\products\\100_1880.gif",
+    "status": "ok 281926"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_1883.gif",
+    "dest": "assets\\images\\products\\100_1883.gif",
+    "status": "ok 284384"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0155.gif",
+    "dest": "assets\\images\\products\\IMG_0155.gif",
+    "status": "ok 64829"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/1.jpg",
+    "dest": "assets\\images\\products\\1.jpg",
+    "status": "ok 80619"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/IMG_0156.gif",
+    "dest": "assets\\images\\products\\IMG_0156.gif",
+    "status": "ok 482509"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/01/4ef72a6-300x300.gif",
+    "dest": "assets\\images\\products\\4ef72a6-300x300.gif",
+    "status": "ok 80916"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/52_n-300x300.gif",
+    "dest": "assets\\images\\products\\52_n-300x300.gif",
+    "status": "ok 36340"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/ANH7_n-300x300.gif",
+    "dest": "assets\\images\\products\\ANH7_n-300x300.gif",
+    "status": "ok 46302"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2023/06/300.gif",
+    "dest": "assets\\images\\products\\300.gif",
+    "status": "ok 73894"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/100_1223SAU-300x300.gif",
+    "dest": "assets\\images\\products\\100_1223SAU-300x300.gif",
+    "status": "ok 64495"
+  },
+  {
+    "url": "https://hoatayviet.net/wp-content/uploads/2022/11/batavia-maquette-premier.gif",
+    "dest": "assets\\images\\products\\batavia-maquette-premier.gif",
+    "status": "ok 47987"
+  }
+]
