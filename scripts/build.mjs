@@ -21,14 +21,19 @@ function homePage() {
     { img: '/assets/images/site/VV3.gif', alt: 'Sản phẩm thuyền mô hình Hoa Tay Việt' },
   ];
 
-  const hero = `<section class="hero-slider">
-    <div class="hero-slider__track">
-      ${HERO_SLIDES.map(s => `<div class="hero-slider__slide"><img src="${s.img}" alt="${esc(s.alt)}"></div>`).join('')}
-    </div>
-    <button class="hero-slider__arrow prev" aria-label="Slide trước">‹</button>
-    <button class="hero-slider__arrow next" aria-label="Slide sau">›</button>
-    <div class="hero-slider__dots"></div>
-  </section>`;
+  const hero = `<div class="home-top">
+    <ul class="home-cats">
+      ${CATEGORIES_NAV.map(c => `<li><a href="/danh-muc/${c.slug}/">${esc(c.name)}</a></li>`).join('')}
+    </ul>
+    <section class="hero-slider">
+      <div class="hero-slider__track">
+        ${HERO_SLIDES.map(s => `<div class="hero-slider__slide"><img src="${s.img}" alt="${esc(s.alt)}"></div>`).join('')}
+      </div>
+      <button class="hero-slider__arrow prev" aria-label="Slide trước">‹</button>
+      <button class="hero-slider__arrow next" aria-label="Slide sau">›</button>
+      <div class="hero-slider__dots"></div>
+    </section>
+  </div>`;
 
   const sections = categories.map(cat => {
     const others = CATEGORIES_NAV.filter(c => c.slug !== cat.slug).slice(0, 4);
@@ -42,7 +47,7 @@ function homePage() {
     title: 'Trang Chủ',
     activeKey: 'home',
     bodyClass: 'page-home',
-    main: `<div class="container"><div class="hero-slider-wrap">${hero}</div>${sections}</div>`,
+    main: `<div class="container">${hero}${sections}</div>`,
   });
 }
 write(`${ROOT}/index.html`, homePage());

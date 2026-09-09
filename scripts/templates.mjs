@@ -65,7 +65,7 @@ function navItem(item, activeKey) {
       </ul>
     </li>`;
   }
-  return `<li><a href="${item.url}"${active ? ' style="background:rgba(255,255,255,.14)"' : ''}>${esc(item.name)}</a></li>`;
+  return `<li><a href="${item.url}"${active ? ' class="is-current"' : ''}>${esc(item.name)}</a></li>`;
 }
 
 export function header(activeKey) {
