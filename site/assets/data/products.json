@@ -1,0 +1,322 @@
+[
+ {
+  "slug": "american-sconut",
+  "name": "AMERICAN SCONUT",
+  "sku": "CH 016",
+  "size": "80L x 10W x 22H (cm) / 60L x 8W x 18H (cm)",
+  "price": "Liên hệ",
+  "category": "Tàu Chở Hàng",
+  "categorySlug": "tau-cho-hang",
+  "thumb": "assets/img/2022/11/IMG_3196ggg7777-600x498-1-300x300.gif"
+ },
+ {
+  "slug": "anteo",
+  "name": "ANTEO",
+  "sku": "CH 001",
+  "size": "80L x 15W x 30H (cm)",
+  "price": "Liên hệ",
+  "category": "Tàu Chở Hàng",
+  "categorySlug": "tau-cho-hang",
+  "thumb": "assets/img/2022/11/IMG_0214-300x300.jpg"
+ },
+ {
+  "slug": "ban-go",
+  "name": "Bàn Gỗ",
+  "sku": "NT 003",
+  "size": "140L x 50W x 40H (cm)",
+  "price": "Liên hệ",
+  "category": "Nội Thất",
+  "categorySlug": "noi-that",
+  "thumb": "assets/img/2022/11/BANe-300x300.gif"
+ },
+ {
+  "slug": "ban-hinh-thuyen",
+  "name": "BÀN HÌNH THUYỀN",
+  "sku": "NT 006",
+  "size": "300L x 120W (cm)",
+  "price": "Liên hệ",
+  "category": "Nội Thất",
+  "categorySlug": "noi-that",
+  "thumb": "assets/img/2022/11/2bTHUYENsau-300x300-1-300x300.gif"
+ },
+ {
+  "slug": "ban-hoc-sinh",
+  "name": "BÀN HỌC SINH",
+  "sku": "",
+  "size": "",
+  "price": "Liên hệ",
+  "category": "Nội Thất",
+  "categorySlug": "noi-that",
+  "thumb": "assets/img/2023/06/300BHS.gif"
+ },
+ {
+  "slug": "batterses-mo-hinh-thuyen",
+  "name": "BATTERSES",
+  "sku": "CH0023",
+  "size": "75L x 15W x 22H (CM)",
+  "price": "LH",
+  "category": "Tàu Chở Hàng",
+  "categorySlug": "tau-cho-hang",
+  "thumb": "assets/img/2023/06/19_n300.gif"
+ },
+ {
+  "slug": "cannon",
+  "name": "CANNON",
+  "sku": "CN 001",
+  "size": "25L (cm)",
+  "price": "Liên hệ",
+  "category": "Sản Phẩm Khác",
+  "categorySlug": "san-pham-khac",
+  "thumb": "assets/img/2022/11/IMG_0468-300x300-1-300x300.gif"
+ },
+ {
+  "slug": "christian-radich-model",
+  "name": "CHRISTIAN RADICH",
+  "sku": "BT 003",
+  "size": "75L x 11W x 65H (cm)",
+  "price": "Liên hệ",
+  "category": "Thuyền Buồm",
+  "categorySlug": "thuyen-buom",
+  "thumb": "assets/img/2022/11/100_1885.gif"
+ },
+ {
+  "slug": "ky-niem-chuong",
+  "name": "Kỷ niệm chương",
+  "sku": "CN005",
+  "size": "25L x 9W x 10H (cm)",
+  "price": "Liên hệ",
+  "category": "Sản Phẩm Khác",
+  "categorySlug": "san-pham-khac",
+  "thumb": "assets/img/2022/11/FFFFFFFFFFFFFFFFFFF-300x207-1.gif"
+ },
+ {
+  "slug": "lagoon-450-yacht-model",
+  "name": "LAGOON 450",
+  "sku": "DL015",
+  "size": "70L x 40W x 100H (cm)",
+  "price": "Liên hệ",
+  "category": "Tàu Du Lịch – Du Thuyền",
+  "categorySlug": "tau-du-lich-du-thuyen",
+  "thumb": "assets/img/2022/11/44e69f146d8.gif"
+ },
+ {
+  "slug": "laustrl-mo-hinh-tau",
+  "name": "L’AUSTRL",
+  "sku": "DL 003",
+  "size": "70L x 9W x 24H (cm)",
+  "price": "Liên hệ",
+  "category": "Tàu Du Lịch – Du Thuyền",
+  "categorySlug": "tau-du-lich-du-thuyen",
+  "thumb": "assets/img/2022/11/IMG_0406k.gif"
+ },
+ {
+  "slug": "mo-hinh-tau-astor",
+  "name": "ASTOR",
+  "sku": "DL 001",
+  "size": "80L x 12W x 38H (cm)",
+  "price": "Liên hệ",
+  "category": "Tàu Du Lịch – Du Thuyền",
+  "categorySlug": "tau-du-lich-du-thuyen",
+  "thumb": "assets/img/2022/11/IMG_0305-2.gif"
+ },
+ {
+  "slug": "mo-hinh-tau-asuka-ll",
+  "name": "ASUKA ll",
+  "sku": "DL 00012",
+  "size": "80L x 11W x 24H (cm)",
+  "price": "LH",
+  "category": "Tàu Du Lịch – Du Thuyền",
+  "categorySlug": "tau-du-lich-du-thuyen",
+  "thumb": "assets/img/2023/06/6_n300.gif"
+ },
+ {
+  "slug": "mo-hinh-tau-erzherzog-franz-ferdinand",
+  "name": "ERZHERZOG FRANZ FERDINAND",
+  "sku": "DL 012",
+  "size": "80L x 15W x 22H (cm)",
+  "price": "LH",
+  "category": "Tàu Du Lịch – Du Thuyền",
+  "categorySlug": "tau-du-lich-du-thuyen",
+  "thumb": "assets/img/2022/11/IMG_3164a.gif"
+ },
+ {
+  "slug": "mo-hinh-tau-mississippi",
+  "name": "MISSISSIPPI",
+  "sku": "DL 002",
+  "size": "70L x 12W x 27H (cm)",
+  "price": "Liên hệ",
+  "category": "Tàu Du Lịch – Du Thuyền",
+  "categorySlug": "tau-du-lich-du-thuyen",
+  "thumb": "assets/img/2022/11/100_2207.gif"
+ },
+ {
+  "slug": "mo-hinh-tau-thuyen",
+  "name": "BROOM 35 EUROPEAN",
+  "sku": "DL0057",
+  "size": "60L x 16W x 27H (cm)",
+  "price": "Liên hệ",
+  "category": "Tàu Du Lịch – Du Thuyền",
+  "categorySlug": "tau-du-lich-du-thuyen",
+  "thumb": "assets/img/2023/06/46976_n300.gif"
+ },
+ {
+  "slug": "mo-hinh-thuen",
+  "name": "CALLISTA",
+  "sku": "0071",
+  "size": "90L x 12W x 25H (cm)",
+  "price": "LH",
+  "category": "Tàu Du Lịch – Du Thuyền",
+  "categorySlug": "tau-du-lich-du-thuyen",
+  "thumb": "assets/img/2023/06/78480_n300.gif"
+ },
+ {
+  "slug": "mo-hinh-thuyen-batavia",
+  "name": "BATAVIA",
+  "sku": "TB 005",
+  "size": "80L x 15W x 75H (cm)",
+  "price": "Liên hệ",
+  "category": "Thuyền Buồm",
+  "categorySlug": "thuyen-buom",
+  "thumb": "assets/img/2022/11/batavia-maquette-premier.gif"
+ },
+ {
+  "slug": "mo-hinh-thuyen-buom-2",
+  "name": "WASA",
+  "sku": "TB001",
+  "size": "80L x 15W x 75H (cm)",
+  "price": "LH",
+  "category": "Thuyền Buồm",
+  "categorySlug": "thuyen-buom",
+  "thumb": "assets/img/2023/06/1300.gif"
+ },
+ {
+  "slug": "mo-hinh-thuyen-buom",
+  "name": "THUYỀN BUỒM HTV",
+  "sku": "BT0012",
+  "size": "450L x 120W x 45H (cm)",
+  "price": "LH",
+  "category": "Thuyền (Dùng đi dạo)",
+  "categorySlug": "thuyen-dung-di-dao",
+  "thumb": "assets/img/2023/06/IMG_300.gif"
+ },
+ {
+  "slug": "mo-hinh-thuyen",
+  "name": "Thuyền buồm HẠ LONG",
+  "sku": "TB 004",
+  "size": "150L x 30W x 120H (cm)",
+  "price": "15,000,000 (vnd)",
+  "category": "Thuyền Buồm",
+  "categorySlug": "thuyen-buom",
+  "thumb": "assets/img/2022/11/IMG_0155.gif"
+ },
+ {
+  "slug": "model-ships-thorsen-axel-1810-na-uy",
+  "name": "THORSEN axel 1810 NA UY",
+  "sku": "TB 001",
+  "size": "60L x 12W x 55H (cm)",
+  "price": "6,000,000 (vnd)",
+  "category": "Thuyền Buồm",
+  "categorySlug": "thuyen-buom",
+  "thumb": "assets/img/2022/11/100_2146t.gif"
+ },
+ {
+  "slug": "noi-that-go-tram",
+  "name": "BÀN TRANG ĐIỂM",
+  "sku": "",
+  "size": "DÀI 80cm GIÁ: 2,100,000 vnd",
+  "price": "Liên hệ",
+  "category": "Nội Thất",
+  "categorySlug": "noi-that",
+  "thumb": "assets/img/2023/06/300.gif"
+ },
+ {
+  "slug": "quay-ba",
+  "name": "QUẦY BA",
+  "sku": "NT 005",
+  "size": "",
+  "price": "Liên hệ",
+  "category": "Nội Thất",
+  "categorySlug": "noi-that",
+  "thumb": "assets/img/2022/11/BAR1SAU-500x600-1-300x300.gif"
+ },
+ {
+  "slug": "silver-dee",
+  "name": "SILVER DEE",
+  "sku": "DT017",
+  "size": "60L x 18W x 30H (cm)",
+  "price": "Liên hệ",
+  "category": "Du Thuyền Hiện Đại",
+  "categorySlug": "du-thuyen-hien-dai",
+  "thumb": "assets/img/2022/11/0088_n-600x600-1.gif"
+ },
+ {
+  "slug": "star-1-mo-hinh-thuyen",
+  "name": "STAR 1",
+  "sku": "TB 009",
+  "size": "80L x 16W x 75H (cm)",
+  "price": "Liên hệ",
+  "category": "Tàu Chở Hàng",
+  "categorySlug": "tau-cho-hang",
+  "thumb": "assets/img/2022/11/z4017f79e9.gif"
+ },
+ {
+  "slug": "thuyen-my-nghe",
+  "name": "LA JACINTHE",
+  "sku": "TB 002",
+  "size": "55L x 12W 55H (cm)",
+  "price": "3,000,000 (vnd)",
+  "category": "Thuyền Buồm",
+  "categorySlug": "thuyen-buom",
+  "thumb": "assets/img/2022/11/la-jacinthe.gif"
+ },
+ {
+  "slug": "tranh-thuyen-2",
+  "name": "TRANH THUYỀN",
+  "sku": "CN 002",
+  "size": "80L x 60H (cm)",
+  "price": "Liên hệ",
+  "category": "Sản Phẩm Khác",
+  "categorySlug": "san-pham-khac",
+  "thumb": "assets/img/2022/11/100_1224Sau-300x300.gif"
+ },
+ {
+  "slug": "tranh-thuyen",
+  "name": "TRANH THUYỀN",
+  "sku": "CN 002",
+  "size": "80L x 60H (cm)",
+  "price": "Liên hệ",
+  "category": "Sản Phẩm Khác",
+  "categorySlug": "san-pham-khac",
+  "thumb": "assets/img/2022/11/100_1223SAU-300x300.gif"
+ },
+ {
+  "slug": "tu-go",
+  "name": "Tủ Gỗ",
+  "sku": "NT 002",
+  "size": "80W x 200H (cm)",
+  "price": "Liên hệ",
+  "category": "Nội Thất",
+  "categorySlug": "noi-that",
+  "thumb": "assets/img/2022/11/9fc-200x300.gif"
+ },
+ {
+  "slug": "victory",
+  "name": "VICTORY",
+  "sku": "TB 008",
+  "size": "80L x 17W x 74H (cm)",
+  "price": "Liên hệ",
+  "category": "Thuyền Buồm",
+  "categorySlug": "thuyen-buom",
+  "thumb": "assets/img/2022/11/IMG_3700.gif"
+ },
+ {
+  "slug": "xuong-go",
+  "name": "XUỒNG",
+  "sku": "TB0011",
+  "size": "450L x 120W X 45H 9cm)",
+  "price": "LH",
+  "category": "Thuyền (Dùng đi dạo)",
+  "categorySlug": "thuyen-dung-di-dao",
+  "thumb": "assets/img/2023/06/IMG_1677300.gif"
+ }
+]

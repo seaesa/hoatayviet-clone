@@ -1,0 +1,1063 @@
+/* ==========================================================================
+   Hoa Tay Việt — clone of hoatayviet.net (homepage)
+   Vanilla HTML/CSS/JS. All values extracted from the original computed styles.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand */
+  --c-primary:        #0056a8;   /* links, section rules, cart badge outline */
+  --c-primary-dark:   #003eaa;   /* header bottom bar, section title chip     */
+  --c-secondary:      #e3411f;   /* "DANH MỤC SẢN PHẨM" block                 */
+  --c-accent:         #ffeba4;   /* nav hover / active                        */
+  --c-cta:            #ef4a0e;   /* add-to-cart / checkout                    */
+  --c-success:        #81d742;
+  --c-alert:          #ea3a3c;
+
+  /* Neutrals */
+  --c-text:           #333;
+  --c-heading:        #111;
+  --c-muted:          #555;
+  --c-topbar-bg:      #eee;
+  --c-header-bg:      #fff;
+  --c-line:           #ececec;
+  --c-line-soft:      #ddd;
+
+  /* Footer */
+  --c-footer-bg:      #001a38;
+  --c-footer-bottom:  #00000a;
+  --c-ribbon-a:       #001a38;   /* .vi-left-title fold, left edge   */
+  --c-ribbon-b:       #0d3279;   /* .vi-left-title fold, bottom edge */
+
+  /* Type */
+  --f-body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --f-head: "Roboto Condensed", "Roboto", Arial, sans-serif;
+
+  /* Layout */
+  --container:       1140px;   /* .container / .row            */
+  --container-sm:    1122.5px; /* .row-small                   */
+  --gutter:          15px;     /* .container side padding      */
+  --gutter-sm:       5px;      /* .row-small > .col            */
+
+  /* Header metrics */
+  --h-topbar:        30px;     /* min-height; grows with content to 36px */
+  --h-main:          100px;
+  --h-main-sm:       70px;
+  --h-bottom:        44px;
+
+  /* Motion */
+  --t-fast:  .2s;
+  --t-base:  .3s;
+  --t-slow:  .6s;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset / base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { background-color: var(--c-footer-bottom); -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--c-text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--f-head);
+  font-weight: 700;
+  color: var(--c-heading);
+  margin: 0 0 .5em;
+  line-height: 1.3;
+}
+
+a { color: var(--c-primary); text-decoration: none; transition: color var(--t-fast); }
+a:hover { color: var(--c-heading); }
+
+img { max-width: 100%; height: auto; display: block; border: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+p  { margin: 0 0 1em; }
+
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  width: 100%;
+}
+
+.icon { width: 1em; height: 1em; fill: currentColor; flex: none; display: inline-block; vertical-align: -.125em; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Flatsome visibility utilities. Breakpoints: small <=549, medium 550-849, large >=850 */
+@media (max-width: 849px) { .hide-for-medium { display: none !important; } }
+@media (min-width: 850px) { .show-for-medium { display: none !important; } }
+@media (max-width: 549px) { .hide-for-small  { display: none !important; } }
+@media (min-width: 550px) { .show-for-small  { display: none !important; } }
+
+/* --------------------------------------------------------------------------
+   3. Header shell + sticky
+   -------------------------------------------------------------------------- */
+.header { position: relative; width: 100%; z-index: 30; }
+
+.header-wrapper {
+  width: 100%;
+  z-index: 30;
+  position: relative;
+  background-color: var(--c-header-bg);
+  transition: background-color var(--t-base), opacity var(--t-base);
+}
+
+/* Flatsome: .stuck => fixed, and every .hide-for-sticky element collapses,
+   leaving only the blue bottom bar on screen. */
+.header-wrapper.stuck {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  margin: 0 auto;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .15);
+  animation: stuckMoveDown .6s;
+}
+.header-wrapper.stuck .hide-for-sticky { display: none; }
+
+@keyframes stuckMoveDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+/* Shared flex row used by all three header bands */
+.header-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.header-col { display: flex; align-items: center; max-height: 100%; }
+.header-col.is-grow { flex: 1; }
+
+/* --- 3a. Top bar ---------------------------------------------------------- */
+.header-top {
+  display: flex;
+  align-items: center;
+  min-height: var(--h-topbar);
+  background-color: var(--c-topbar-bg);
+  position: relative;
+  z-index: 11;
+  font-size: 14px;
+}
+
+.topbar-nav { display: flex; align-items: center; }
+.topbar-nav > li { position: relative; margin: 0 .7em; }
+.topbar-nav > li:first-child { margin-left: 0; }
+.topbar-nav > li:last-child  { margin-right: 0; }
+
+/* nav-divided: a hairline before every item except the first */
+.topbar-nav > li + li::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: -1em;
+  width: 1px; height: 15px;
+  margin-top: -7px;
+  border-left: 1px solid rgba(0, 0, 0, .1);
+}
+
+.topbar-nav a,
+.topbar-nav .topbar-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0;
+  color: var(--c-muted);
+  font-size: 14px;
+  line-height: 22.4px;
+}
+.topbar-nav a:hover { color: var(--c-heading); }
+.topbar-nav .icon { font-size: 14px; opacity: .85; }
+
+.lang-toggle {
+  font-family: var(--f-head);
+  font-size: 16px;
+  line-height: 25.6px;   /* this link is what makes the top bar 36px tall */
+  color: var(--c-muted);
+  cursor: pointer;
+  background: none;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0;
+}
+.lang-toggle:hover { color: var(--c-heading); }
+
+/* --- 3b. Main bar (logo / search / cart) ---------------------------------- */
+.header-main {
+  height: var(--h-main);
+  position: relative;
+  z-index: 10;
+}
+.header-main .header-row { height: 100%; }
+
+.logo { width: 200px; flex: none; }
+.logo a { display: block; color: var(--c-primary); }
+.logo img { max-height: var(--h-main); width: auto; }
+
+/* Faithful to the original: header-main icons are painted #fff by the theme
+   options, which makes them invisible on the white bar. See docs/research. */
+.header-main .header-icon { color: #fff; }
+.header-main .header-icon:hover { color: #000; }
+
+.header-search { flex: 1; padding-left: 30px; }
+.searchform {
+  display: flex;
+  align-items: center;
+  width: 81%;
+  position: relative;
+}
+.searchform > * { flex: none; }
+
+.search-cats,
+.search-field {
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, .09);
+  background-color: rgba(0, 0, 0, .03);
+  border-radius: 0;
+  padding: 0 10.2px;
+  font-size: 13.6px;
+  color: var(--c-text);
+  outline: 0;
+  transition: border-color var(--t-fast), background-color var(--t-fast);
+}
+.search-cats { width: 80px; flex: none; margin-right: 4px; -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill='%23333' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center; background-size: 10px 6px;
+  padding-right: 26px; cursor: pointer; }
+.search-field { width: calc(100% - 87px); flex: none; padding-right: 48px; }
+.search-field::placeholder { color: #999; opacity: 1; }
+.search-cats:focus,
+.search-field:focus { border-color: var(--c-primary); background-color: #fff; }
+
+.search-submit {
+  width: 42px; height: 34px;
+  margin-left: -44px;
+  align-self: center;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 0 12px;
+  color: var(--c-heading);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: color var(--t-fast);
+  z-index: 1;
+}
+.search-submit:hover { color: var(--c-primary); }
+.search-submit .icon { font-size: 16px; }
+
+.header-tools { display: flex; align-items: center; }
+.header-tools > li { position: relative; display: flex; align-items: center; height: 44px; }
+.header-tools > li.header-divider { height: 30px; align-self: center; }
+.header-tools > li.account-item { margin-right: 7px; }
+.header-tools > li.cart-item { margin-left: 7px; }
+
+.account-link { display: inline-flex; align-items: center; padding: 10px 0; width: 20px; }
+.account-link .icon { width: 20px; height: 24px; }
+
+.header-divider {
+  border-left: 1px solid rgba(0, 0, 0, .1);
+  width: 1px;
+  height: 30px;
+  margin: 0 7.5px;
+}
+
+.cart-link {
+  display: inline-flex; align-items: center;
+  padding: 5px 0;
+  color: var(--c-heading);
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cart-link { padding: 10px 0; }
+.cart-link:hover { color: var(--c-primary); }
+
+/* basket glyph + count bubble ([data-icon-label="0"] hides the bubble) */
+.cart-glyph { position: relative; margin-left: 5px; display: inline-flex; }
+.cart-glyph .icon { width: 23px; height: 24px; }
+.cart-glyph[data-icon-label]::after {
+  content: attr(data-icon-label);
+  position: absolute;
+  top: -10px; right: -10px;
+  min-width: 17px; height: 17px;
+  padding-inline: 2px;
+  border-radius: 99px;
+  background-color: var(--c-cta);
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .3);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: -.5px;
+  text-align: center;
+  opacity: .9;
+  z-index: 1;
+}
+.cart-glyph[data-icon-label="0"]::after { display: none; }
+
+/* The little outlined basket badge (::after draws the handle) */
+.cart-icon { display: inline-block; position: relative; font-size: .66em; }
+.cart-icon strong {
+  border: 2px solid var(--c-primary);
+  color: var(--c-primary);
+  border-radius: 0;
+  font-weight: 700;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: .3em 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 2.2em; height: 2.2em;
+  font-size: 1em; line-height: 1.9em;
+  transition: background-color var(--t-base), color var(--t-base);
+}
+.cart-icon strong::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; left: 50%;
+  margin-left: -7px;
+  width: 14px; height: 8px;
+  border: 2px solid var(--c-primary);
+  border-bottom: 0;
+  border-top-left-radius: 99px;
+  border-top-right-radius: 99px;
+  transition: height .1s ease-out;
+  pointer-events: none;
+}
+.cart-icon:hover strong { background-color: var(--c-primary); color: #fff; }
+.cart-icon:hover strong::after { height: 10px; }
+
+/* header-main override, matching the live theme options */
+/* Faithful: the theme paints header-main icons white, so on the white bar
+   the account and basket glyphs are effectively invisible. */
+.header-main .account-link,
+.header-main .cart-glyph { color: #fff; }
+.header-main .account-link:hover,
+.header-main .cart-link:hover .cart-glyph { color: #000; }
+
+/* --- 3c. Bottom bar: mega menu + main nav + phone ------------------------- */
+.header-bottom {
+  display: flex;
+  align-items: center;
+  min-height: var(--h-bottom);
+  background-color: var(--c-primary-dark);
+  position: relative;
+  z-index: 9;
+}
+
+/* The three columns: 25% / auto centre / 1fr right */
+.header-bottom .header-row > .nav-left   { width: 25%; padding-right: 5px; margin-left: -2px; flex: none; }
+.header-bottom .header-row > .nav-center { flex: none; }
+.header-bottom .header-row > .nav-right  { flex: 1; justify-content: flex-end; }
+
+/* -- Mega menu (vertical product categories) ------------------------------- */
+.mega-menu { width: 100%; background: var(--c-secondary); position: relative; }
+
+.mega-menu-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 10px 0 10px 15px;
+  font-family: var(--f-head);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+.mega-menu-title .icon { font-size: 15px; }
+
+.mega-menu-list {
+  position: absolute;
+  top: 100%; left: 0;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0;
+  border: 1px solid var(--c-line-soft);
+  background: #fff;
+  display: none;
+  z-index: 8;
+}
+/* On the home page the list is permanently open under the button… */
+body.is-home .mega-menu-list { display: block; }
+/* …but once the header sticks it collapses back into a real dropdown. */
+.header-wrapper.stuck .mega-menu-list { margin-top: 0; display: none; }
+.mega-menu-list.is-open { display: block !important; }
+
+.mega-menu-list > li { position: relative; }
+.mega-menu-list a {
+  display: block;
+  padding: 7px 15px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-primary);
+  transition: background-color var(--t-fast), color var(--t-fast);
+}
+.mega-menu-list li:hover > a { background: #f5f5f5; }
+.mega-menu-list li + li > a { border-top: 1px solid #f1f1f1; }
+
+/* -- Main nav -------------------------------------------------------------- */
+.main-nav { display: flex; align-items: center; }
+.main-nav > li { position: relative; margin: 0 9px; }
+.main-nav > li:first-child { margin-left: 0; }
+.main-nav > li:last-child  { margin-right: 0; }
+
+.main-nav > li > a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 0;
+  margin-right: 7px;
+  font-family: var(--f-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: #fff;
+  transition: color var(--t-fast);
+}
+.main-nav > li:first-child > a { margin-left: 15px; }
+.main-nav > li > a:hover,
+.main-nav > li.is-active > a,
+.main-nav > li.is-open > a { color: var(--c-accent); }
+.main-nav > li > a .icon { width: 11px; height: 19px; margin-left: 3.2px; }
+
+/* Dropdown under "HƯỚNG DẪN" */
+.nav-dropdown {
+  position: absolute;
+  top: 100%; left: -99999px;
+  min-width: 260px;
+  max-height: 0;
+  padding: 20px;
+  margin: 0;
+  opacity: 0;
+  z-index: 9;
+  background-color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, .15);
+  color: #777;
+  text-align: left;
+  transition: opacity .25s;
+}
+.main-nav > li.is-open > .nav-dropdown {
+  left: -15px;
+  max-height: none;
+  opacity: 1;
+}
+.nav-dropdown > li > a {
+  display: block;
+  margin: 0 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--c-line);
+  font-size: 14px;
+  color: var(--c-muted);
+}
+.nav-dropdown > li:last-child > a { border-bottom: 0; }
+.nav-dropdown > li > a:hover { color: var(--c-primary); }
+
+/* little white arrow above the open dropdown */
+.main-nav > li.has-dropdown::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; left: 50%;
+  margin-left: -8px;
+  border: 8px solid transparent;
+  border-bottom-color: #fff;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.main-nav > li.has-dropdown.is-open::after { opacity: 1; }
+
+/* -- Header phone ---------------------------------------------------------- */
+.header-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 0 9px;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 25.6px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .8);
+  transition: color var(--t-fast);
+}
+.header-phone:hover { color: #fff; }
+.header-phone .icon { font-size: 16px; }
+
+/* -- Mobile bar ------------------------------------------------------------ */
+.burger,
+.cart-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 0;
+  background: none;
+  border: 0;
+  color: #fff;              /* invisible on white — as on the original */
+  font-size: 20px;
+}
+.burger .icon      { width: 25px; height: 30px; }
+.cart-toggle .icon { width: 23px; height: 24px; }
+
+/* --------------------------------------------------------------------------
+   4. Grid (Flatsome .row / .col subset)
+   -------------------------------------------------------------------------- */
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: var(--container);
+  margin-inline: auto;
+  width: 100%;
+}
+.row-small { max-width: var(--container-sm); margin-inline: auto; }
+.row-small > .col { padding: 0 var(--gutter-sm) 10px; margin-bottom: 0; }
+
+.col { position: relative; margin: 0; padding: 0 var(--gutter) 30px; width: 100%; }
+
+/* A row nested inside a column pulls back over the column gutter, so its
+   children line up with the outer grid (Flatsome does the same). */
+.col > .row-small { margin-inline: calc(var(--gutter-sm) * -1); max-width: none; width: auto; }
+
+.gap { display: block; height: 10px; }
+
+/* Product grids: 2 up by default, 4 up from 850px (matches small-columns-2 /
+   large-columns-4 on the original). */
+.grid-products > .col { max-width: 50%; flex-basis: 50%; }
+@media (min-width: 850px) { .grid-products > .col { max-width: 25%; } }
+
+/* Hero split: 25 / 75 from 550px, stacked below. */
+.col-3 { max-width: 100%; flex-basis: 100%; }
+.col-9 { max-width: 100%; flex-basis: 100%; }
+@media (min-width: 550px) {
+  .col-3 { max-width: 25%; flex-basis: 25%; }
+  .col-9 { max-width: 75%; flex-basis: 75%; }
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero slider
+   -------------------------------------------------------------------------- */
+.hero-row { padding-top: 0; }
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+}
+.slider-track {
+  display: flex;
+  height: 100%;
+  transition: transform var(--t-slow) cubic-bezier(.4, 0, .2, 1);
+  will-change: transform;
+}
+.slider.is-dragging .slider-track { transition: none; }
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  padding-top: 300px;             /* the original banner height */
+  background-color: #fff;
+}
+.slide .slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 45% 68%;   /* from the original banner CSS */
+  background-repeat: no-repeat;
+}
+.slide .slide-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(190, 190, 190, .2);
+}
+
+/* Arrows — hidden until the slider is hovered, then eased in */
+.slider-arrow {
+  position: absolute;
+  top: 10%; bottom: 10%;
+  width: 36px;
+  padding: 0; margin: 0;
+  background: none;
+  border: 0;
+  color: #fff;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity var(--t-base), transform var(--t-base);
+}
+.slider-arrow.prev { left: 2%;  transform: translateX(20%); }
+.slider-arrow.next { right: 2%; transform: translateX(-20%); }
+.slider:hover .slider-arrow { opacity: .7; transform: translateX(0) !important; }
+.slider-arrow:hover { opacity: 1; }
+
+.slider-arrow .icon {
+  width: 36px; height: 36px;
+  padding: 20%;
+  border: 2px solid currentColor;
+  border-radius: 100%;
+  fill: currentColor;
+  transition: background-color var(--t-base), border-color var(--t-base), fill var(--t-base);
+}
+.slider-arrow:hover .icon {
+  background-color: var(--c-primary);
+  border-color: var(--c-primary);
+  fill: #fff !important;
+}
+
+/* Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 15px; left: 20%; right: 20%;
+  padding: 0; margin: 0;
+  text-align: center;
+  line-height: 1;
+  z-index: 2;
+}
+.slider-dots button {
+  display: inline-block;
+  width: 12px; height: 12px;
+  margin: 0 5px; padding: 0;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: none;
+  opacity: .4;
+  transition: opacity var(--t-base), background-color var(--t-base);
+}
+.slider-dots button:hover { opacity: .7; }
+.slider-dots button[aria-selected="true"] { background-color: #fff; opacity: 1; }
+
+@media (max-width: 549px) { .slider-arrow { display: none; } }
+
+/* --------------------------------------------------------------------------
+   6. Section header (the blue ribbon)
+   -------------------------------------------------------------------------- */
+.section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 52px;
+  border-bottom: 1px solid var(--c-primary);
+}
+
+.section-title {
+  position: relative;
+  margin: 0;
+  padding: 3px 10px;
+  width: auto;
+  flex: none;
+  background: var(--c-primary-dark);
+  color: #fff;
+  font-size: 18px;
+  font-family: var(--f-head);
+  font-weight: 700;
+  line-height: 1.6;
+}
+.section-title a { color: #fff; }
+.section-title a:hover { color: var(--c-accent); }
+/* the folded-ribbon tail */
+.section-title::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 100%;
+  border: 18px solid transparent;
+  border-left-color: var(--c-ribbon-a);
+  border-bottom-color: var(--c-ribbon-b);
+}
+
+.section-links {
+  text-align: right;
+  padding-top: 32px;      /* matches the original's 51px-tall link block */
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--c-muted);
+}
+.section-links a { color: var(--c-muted); font-size: 14px; margin-left: 15px; }
+.section-links a:first-child { margin-left: 0; }
+.section-links a:hover { color: var(--c-primary); }
+
+@media (max-width: 549px) {
+  .section-head { flex-direction: column; align-items: stretch; gap: 0; }
+  .section-title { align-self: flex-start; }
+  .section-links { text-align: left; padding-top: 8px; padding-bottom: 6px; }
+  .section-head { min-height: 0; }
+  .section-links a { margin-left: 0; margin-right: 12px; }
+}
+
+/* --------------------------------------------------------------------------
+   7. Product card
+   -------------------------------------------------------------------------- */
+.product-card { position: relative; width: 100%; }
+
+.product-media {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100%;            /* square, like .image-cover */
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.product-media > a { display: block; }
+
+.product-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transition: opacity var(--t-slow), transform var(--t-slow), filter var(--t-slow);
+}
+
+/* second photo, revealed on hover */
+.product-media .img-back { opacity: 0; z-index: 1; }
+.product-card:hover .img-back { opacity: 1; }
+
+/* the little basket button that slides up from the bottom edge */
+.product-tools {
+  position: absolute;
+  left: 10px; bottom: 0;
+  margin: 5px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(100%) translateZ(0);
+  transition: opacity .5s, transform var(--t-base);
+}
+.product-card:hover .product-tools { opacity: 1; transform: translateY(0) translateZ(0); }
+.product-tools .cart-icon strong { background-color: #fff; }
+
+.product-body { padding: 9.8px 10px; text-align: center; font-size: 14px; }
+.product-name {
+  margin: 0 0 3px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.product-name a { color: var(--c-primary); }
+.product-name a:hover { color: var(--c-heading); }
+.product-price { color: var(--c-cta); font-weight: 700; font-size: 14px; }
+
+@media (max-width: 549px) {
+  .product-body { font-size: 85%; }
+  .product-tools { opacity: 1; transform: none; }   /* touch: always visible */
+}
+
+/* --------------------------------------------------------------------------
+   8. Footer
+   -------------------------------------------------------------------------- */
+.footer-widgets {
+  background-color: var(--c-footer-bg);
+  font-size: 14px;
+  color: #fff;
+  padding-top: 25px;
+}
+.footer-widgets .row { display: flex; flex-flow: row wrap; }
+.footer-widgets .widget { padding: 0 var(--gutter); margin-bottom: 25px; width: 100%; }
+@media (min-width: 850px) { .footer-widgets .widget { width: 33.3333%; max-width: 33.3333%; } }
+
+.widget-title {
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.05;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+.is-divider {
+  height: 3px; width: 30px;
+  display: block;
+  margin: .66em auto 1em;
+  background-color: #000;
+}
+.footer-widgets .textwidget { padding-top: 6px; }
+.footer-widgets p { margin-bottom: 10px; display: flex; gap: 8px; align-items: flex-start; }
+.footer-widgets .icon { margin-top: .35em; flex: none; opacity: .9; }
+.footer-widgets a { color: #fff; }
+.footer-widgets a:hover { color: #08c; }
+.footer-widgets .muted { color: var(--c-text); }   /* faithful to the original */
+
+.footer-map { width: 100%; height: 150px; border: 0; display: block; }
+
+.footer-bottom {
+  background-color: var(--c-footer-bottom);
+  color: rgba(255, 255, 255, .5);
+  padding: 10px 0 15px;
+  font-size: 14px;
+}
+.footer-bottom strong { color: rgba(255, 255, 255, .7); }
+
+/* --------------------------------------------------------------------------
+   9. Floating widgets
+   -------------------------------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  right: 20px; bottom: 20px;
+  width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .9);
+  color: var(--c-heading);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30%);
+  transition: opacity var(--t-base), transform var(--t-base), background-color var(--t-base);
+  z-index: 40;
+}
+.back-to-top.is-active { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-to-top:hover { background: var(--c-primary); color: #fff; border-color: var(--c-primary); }
+@media (max-width: 849px) { .back-to-top { display: none; } }
+
+/* Hotline widget.
+   The live site ships this markup but its plugin stylesheet never loads, so it
+   renders as a plain line of text below the footer. That is reproduced here.
+   Add `is-floating` to the .quick-call element for the intended floating
+   button, which is fully styled below. */
+.quick-call { position: relative; }
+.quick-call .quick-call-inner { position: static; }
+.quick-call .quick-call-text {
+  position: static;
+  transform: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--c-text);
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 20.8px;
+}
+.quick-call:not(.is-floating) .ph-circle,
+.quick-call:not(.is-floating) .ph-circle-fill,
+.quick-call:not(.is-floating) .ph-img-circle { display: none; }
+.quick-call:not(.is-floating) a { position: static; }
+
+/* --- the working floating variant --------------------------------------- */
+.quick-call.is-floating { position: fixed; left: 3%; top: 50%; z-index: 41; }
+@media (max-width: 680px) { .quick-call.is-floating { top: auto; bottom: 16px; } }
+
+.quick-call.is-floating .quick-call-inner { position: relative; width: 60px; height: 60px; }
+
+.quick-call.is-floating .quick-call-text {
+  position: absolute;
+  left: 70px; top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #1e73be;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.quick-call.is-floating a { position: absolute; inset: 0; display: block; z-index: 2; }
+
+.quick-call.is-floating .ph-circle,
+.quick-call.is-floating .ph-circle-fill,
+.quick-call.is-floating .ph-img-circle {
+  position: absolute;
+  border-radius: 100%;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+.quick-call.is-floating .ph-circle {
+  width: 60px; height: 60px;
+  border: 2px solid rgba(0, 204, 51, .6);
+  opacity: .1;
+  animation: quickCircle 1.2s infinite ease-in-out;
+}
+.quick-call.is-floating .ph-circle-fill {
+  width: 46px; height: 46px;
+  background-color: rgba(0, 204, 51, .35);
+  animation: quickFill 2.3s infinite ease-in-out;
+}
+.quick-call.is-floating .ph-img-circle {
+  width: 34px; height: 34px;
+  background-color: #0c3;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  animation: quickShake 1s infinite ease-in-out;
+}
+.quick-call.is-floating .ph-img-circle .icon { font-size: 17px; }
+
+@keyframes quickCircle {
+  0%   { transform: translate(-50%, -50%) rotate(0)   scale(.5); opacity: .1; }
+  30%  { transform: translate(-50%, -50%) rotate(0)   scale(.7); opacity: .5; }
+  100% { transform: translate(-50%, -50%) rotate(0)   scale(1);  opacity: .1; }
+}
+@keyframes quickFill {
+  0%   { transform: translate(-50%, -50%) scale(.7); opacity: .6; }
+  50%  { transform: translate(-50%, -50%) scale(1);  opacity: .6; }
+  100% { transform: translate(-50%, -50%) scale(.7); opacity: .6; }
+}
+@keyframes quickShake {
+  0%, 50%, 100% { transform: translate(-50%, -50%) rotate(0); }
+  10%, 30%      { transform: translate(-50%, -50%) rotate(-25deg); }
+  20%, 40%      { transform: translate(-50%, -50%) rotate(25deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quick-call .ph-circle, .quick-call .ph-circle-fill, .quick-call .ph-img-circle { animation: none; }
+  .header-wrapper.stuck { animation: none; }
+  .slider-track { transition: none; }
+}
+
+/* --------------------------------------------------------------------------
+   10. Mobile off-canvas menu
+   -------------------------------------------------------------------------- */
+.offcanvas-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, .5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-base);
+  z-index: 90;
+}
+.offcanvas-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+.offcanvas {
+  position: fixed;
+  top: 0; bottom: 0; left: 0;
+  width: 260px; max-width: 85vw;
+  background: #fff;
+  z-index: 91;
+  transform: translateX(-100%);
+  transition: transform var(--t-base) ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.offcanvas.is-open { transform: translateX(0); }
+.offcanvas[hidden] { display: block; }   /* animated, not display-toggled */
+
+.offcanvas-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 15px;
+  background: var(--c-primary-dark);
+  color: #fff;
+}
+.offcanvas-head strong { font-family: var(--f-head); text-transform: uppercase; letter-spacing: .02em; }
+.offcanvas-close { background: none; border: 0; color: #fff; font-size: 18px; padding: 4px; line-height: 1; }
+
+.offcanvas .searchform { width: 100%; padding: 12px 15px; }
+
+.offcanvas-nav > li > a,
+.offcanvas-nav .sub > li > a {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 11px 15px;
+  border-bottom: 1px solid var(--c-line);
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--c-heading);
+}
+.offcanvas-nav > li > a:hover { color: var(--c-primary); background: #f7f7f7; }
+.offcanvas-nav .sub { display: none; background: #fafafa; }
+.offcanvas-nav li.is-open > .sub { display: block; }
+.offcanvas-nav .sub > li > a { padding-left: 28px; text-transform: none; font-weight: 400; }
+.offcanvas-nav .toggle-sub {
+  background: none; border: 0; padding: 4px 6px; color: inherit; line-height: 1;
+  transition: transform var(--t-fast);
+}
+.offcanvas-nav li.is-open > a .toggle-sub { transform: rotate(180deg); }
+.offcanvas-nav .label-cat { background: var(--c-secondary); color: #fff; }
+
+body.no-scroll { overflow: hidden; }
+
+/* --------------------------------------------------------------------------
+   11. Inner pages (category listing + product detail)
+   -------------------------------------------------------------------------- */
+.page-wrap { padding: 20px 0 40px; }
+
+.breadcrumb { font-size: 13px; color: var(--c-muted); margin-bottom: 14px; }
+.breadcrumb a { color: var(--c-muted); }
+.breadcrumb a:hover { color: var(--c-primary); }
+.breadcrumb span { margin: 0 6px; opacity: .5; }
+
+.product-detail { display: flex; flex-flow: row wrap; }
+.product-detail .gallery-col { width: 100%; padding: 0 var(--gutter) 20px; }
+.product-detail .info-col    { width: 100%; padding: 0 var(--gutter) 20px; }
+@media (min-width: 850px) {
+  .product-detail .gallery-col { width: 41.6667%; }
+  .product-detail .info-col    { width: 58.3333%; }
+}
+
+.gallery-main {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--c-line);
+  background: #fff;
+}
+.gallery-main img { width: 100%; height: auto; display: block; }
+
+.gallery-thumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.gallery-thumbs button {
+  width: 68px; height: 68px; padding: 0;
+  border: 1px solid var(--c-line);
+  background: #fff;
+  overflow: hidden;
+  transition: border-color var(--t-fast);
+}
+.gallery-thumbs button:hover { border-color: var(--c-primary); }
+.gallery-thumbs button[aria-selected="true"] { border-color: var(--c-primary); }
+.gallery-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+
+.product-detail h1 { font-size: 24px; margin-bottom: .3em; }
+.product-detail .is-divider { margin-left: 0; background-color: rgba(0,0,0,.1); }
+
+.spec-list { margin: 0 0 18px; }
+.spec-list div { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px dashed var(--c-line); }
+.spec-list dt { flex: none; width: 130px; color: var(--c-muted); }
+.spec-list dd { margin: 0; font-weight: 700; color: var(--c-heading); }
+
+.btn-buy {
+  display: inline-flex; flex-direction: column; align-items: center;
+  padding: 10px 26px;
+  background: var(--c-cta);
+  color: #fff !important;
+  border-radius: 3px;
+  transition: filter var(--t-fast), transform var(--t-fast);
+}
+.btn-buy strong { font-size: 17px; text-transform: uppercase; letter-spacing: .02em; }
+.btn-buy span   { font-size: 12px; opacity: .9; font-weight: 400; }
+.btn-buy:hover  { filter: brightness(1.08); transform: translateY(-1px); }
+
+.product-meta { margin-top: 16px; font-size: 14px; color: var(--c-muted); }
+.product-desc { margin-top: 26px; }
+.product-desc img { margin: 12px 0; }
+
+.empty-note { padding: 40px 0; color: var(--c-muted); }

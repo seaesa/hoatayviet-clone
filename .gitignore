@@ -1,0 +1,13 @@
+# Local reference copy of the original site, rebuildable with scripts/mirror.py
+_mirror/
+
+# Captured source HTML. products.json and home_sections.json are kept (below)
+# because the site build depends on them.
+_raw/*
+!_raw/products.json
+!_raw/home_sections.json
+!_raw/cdx_sp.txt
+!_raw/cdx_cat.txt
+
+.DS_Store
+Thumbs.db
